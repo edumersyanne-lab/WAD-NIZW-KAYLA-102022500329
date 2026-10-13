@@ -1,0 +1,34 @@
+body {
+    font-family: Arial;
+    margin: 20px;
+    text-align: center;
+    background-color: #dedcdc;
+}
+
+h1 {
+    color: black;
+}
+
+h2 {
+    color: black;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+th {
+    background-color: maroon;
+    color: white;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+a {
+    color: maroon;
+}
