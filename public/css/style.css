@@ -1,0 +1,135 @@
+
+/* kalo ini sih buat Kartu Anggota */
+.kartu-anggota {
+    width: 350px;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #f4f6f9;
+    border: 2px solid #b70000;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.kartu-anggota h2 {
+    color: #b70000;
+    text-align: center;
+}
+
+.kartu-anggota p {
+    margin: 15px 0;
+}
+
+/* nah kalo ini  Tampilan Cetak Kartu */
+@media print {
+    body {
+        background: white;
+    }
+
+    .content > p,
+    .content > button,
+    .content > h1 {
+        display: none;
+    }
+
+    .kartu-anggota {
+        border: 2px solid #b70000;
+        margin: 0;
+    }
+}
+
+/* kalo ini tuh buat Tampilan Umum */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+h1 {
+    color: #b70000;
+}
+
+/* Link dan Tombol */
+a {
+    color: #b70000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #b70000;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #900000;
+}
+
+/* ini buattt Tabel Anggota */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #b70000;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* iniasiaisdForm Anggota */
+input,
+select {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+label {
+    font-weight: bold;
+}
+
+/* kalo ini Tampilan HP */
+@media (max-width: 600px) {
+    .content {
+        padding: 12px;
+        overflow-x: auto;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+}
