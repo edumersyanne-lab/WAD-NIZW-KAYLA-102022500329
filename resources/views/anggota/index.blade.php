@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -12,6 +11,14 @@
 <div class="content">
     <h1>Data Anggota</h1>
     <p>Daftar anggota Digital Library</p>
+
+    <div>
+        Login sebagai <strong>{{ auth()->user()->name }}</strong> ({{ auth()->user()->role }})
+        <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+            @csrf
+            <button type="submit">Logout</button>
+        </form>
+    </div>
 
     <p>
         <a href="{{ route('anggota.create') }}">+ Tambah Anggota</a>
@@ -39,17 +46,20 @@
                         <a href="{{ route('anggota.edit', $item->id) }}">Edit</a>
                         |
                         <a href="{{ route('anggota.kartu', $item->id) }}">Lihat Kartu</a>
-                        |
-                        <form
-                            action="{{ route('anggota.destroy', $item->id) }}"
-                            method="POST"
-                            style="display: inline;"
-                            onsubmit="return confirm('Yakin ingin menghapus anggota ini?')"
-                        >
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit">Hapus</button>
-                        </form>
+
+                        @if (auth()->user()->role === 'admin')
+                            |
+                            <form
+                                action="{{ route('anggota.destroy', $item->id) }}"
+                                method="POST"
+                                style="display: inline;"
+                                onsubmit="return confirm('Yakin ingin menghapus anggota ini?')"
+                            >
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit">Hapus</button>
+                            </form>
+                        @endif
                     </td>
                 </tr>
             @empty
